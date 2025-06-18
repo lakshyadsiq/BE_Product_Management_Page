@@ -20,7 +20,6 @@ db = client.product_management  # Access 'product_management' database
 # Define MongoDB collections
 products_collection = db.products
 view_templates_collection = db.view_templates
-picklist_options_collection = db.picklist_options
 
 # Helper function to convert ObjectId to string for JSON serialization
 def serialize_doc(doc):
@@ -61,8 +60,8 @@ def create_product():
         data['created_at'] = datetime.utcnow()
         data['updated_at'] = datetime.utcnow()
         result = products_collection.insert_one(data)
-        product = products_collection.find_one({'_id': result.inserted_id})
-        return jsonify(serialize_doc(product)), 201
+        # product = products_collection.find_one({'_id': result.inserted_id})
+        return jsonify({'Success': "Product is Created Successfully"}), 201
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 

@@ -96,9 +96,8 @@ class ProductSection:
         }
 
 class ViewTemplate:
-    def __init__(self, id: str, name: str, description: str = "", is_default: bool = False, 
+    def __init__(self, name: str, description: str = "", is_default: bool = False, 
                  created_at: Optional[datetime] = None, updated_at: Optional[datetime] = None):
-        self.id = id
         self.name = name
         self.description = description
         self.is_default = is_default
@@ -162,7 +161,8 @@ class ViewTemplate:
         }
 
 class Product:
-    def __init__(self, product_data: Dict[str, Any]):
+    def __init__(self, name: str, product_data: Dict[str, Any]):
+        self.name = name
         self.sections: List[Dict[str, Any]] = product_data.get('structure', [])
         self.created_at = product_data.get('created_at', datetime.utcnow())
         self.updated_at = product_data.get('updated_at', datetime.utcnow())

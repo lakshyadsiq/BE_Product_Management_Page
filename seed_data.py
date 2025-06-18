@@ -6,6 +6,7 @@ def seed_sample_data():
     
     # Sample product data with section-based structure
     sample_product = {
+        "name": "Premium Auto Oil Filter Pro",
         "structure": [
             {
                 "title": "Basic Information",
@@ -83,7 +84,6 @@ def seed_sample_data():
     
     # Complete Product View Template
     complete_view_template = {
-        "id": "default",
         "name": "Complete Product View",
         "description": "Comprehensive view with all product details for internal management",
         "is_default": True,

@@ -22,7 +22,6 @@ class DatabaseManager:
         try:
             # Product indexes
             self.products.create_index([("sku", 1)], unique=True, sparse=True)
-            self.products.create_index([("structure.attributes.name", "text"), ("structure.attributes.value", "text")])
             self.products.create_index([("created_at", -1)])
             
             # View template indexes

@@ -1,10 +1,10 @@
 from app import app
 from database import db_manager
-# from seed_data import seed_sample_data
+from seed_data import seed_sample_data
 
 if __name__ == '__main__':
     try:
-        # seed_sample_data()
+        seed_sample_data()
         print("Database initialized successfully")
 
         print("Starting Flask application...")
